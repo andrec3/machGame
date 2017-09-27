@@ -32,6 +32,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="burro.png" translatesAutoresizingMaskIntoConstraints="NO" id="cPG-vI-3aI" userLabel="animal">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.65992218030000005" green="1" blue="0.9023103791" alpha="1" colorSpace="calibratedRGB"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -56,15 +57,54 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.98217857559999999" green="1" blue="0.62666481519999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U8d-rb-7mj" userLabel="card02">
+                                <rect key="frame" x="305" y="66" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="69K-s4-wV4" userLabel="back">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="touro.png" translatesAutoresizingMaskIntoConstraints="NO" id="CdA-MW-dld" userLabel="animal">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.98217857559999999" green="1" blue="0.62666481519999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Z1-mb-5AT" userLabel="front">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Gz-xK-BFg" userLabel="front">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqa-HO-Apt">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="front.png"/>
+                                                <connections>
+                                                    <action selector="showCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kmq-Hq-lon"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="animalView01" destination="cPG-vI-3aI" id="dQG-Y8-9HO"/>
+                        <outlet property="animalView02" destination="CdA-MW-dld" id="Qki-CY-iij"/>
                         <outlet property="viewBack_01" destination="MyT-QB-qds" id="P7r-P1-gPL"/>
+                        <outlet property="viewBack_02" destination="69K-s4-wV4" id="KaC-Vy-1mE"/>
                         <outlet property="viewFront_01" destination="jpd-um-Oeb" id="9FZ-JA-cGY"/>
+                        <outlet property="viewFront_02" destination="0Z1-mb-5AT" id="jKF-zQ-Q6Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -75,5 +115,6 @@
     <resources>
         <image name="burro.png" width="400" height="400"/>
         <image name="front.png" width="400" height="450"/>
+        <image name="touro.png" width="400" height="400"/>
     </resources>
 </document>

@@ -13,18 +13,21 @@ class ViewController: UIViewController {
 //----------------
     @IBOutlet weak var viewBack_01: UIView!
     @IBOutlet weak var viewFront_01: UIView!
+    @IBOutlet weak var viewBack_02: UIView!
+    @IBOutlet weak var viewFront_02: UIView!
 
     @IBOutlet weak var animalView01: UIImageView!
+    @IBOutlet weak var animalView02: UIImageView!
     
     var arrayOfImagesViews: [UIImageView]!
-    var arrayOfAnimalNames: [String] = ["burro.png"]
+    var arrayOfAnimalNames: [String] = ["burro.png", "touro.png"]
     var arrayOfRandomAnimalNames = [String] ()
     var arrayChosenCards = [String] ()
     
 //----------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrayOfImagesViews = [animalView01]
+        arrayOfImagesViews = [animalView01, animalView02]
         randomAnimalNames()
         setImagesToCard()
     }
@@ -33,6 +36,8 @@ class ViewController: UIViewController {
         switch sender.tag {
         case 0:
             flipCard(from: viewFront_01, to: viewBack_01)
+        case 1:
+            flipCard(from: viewFront_02, to: viewBack_02)
         default:
             break
         }
