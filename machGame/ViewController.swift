@@ -5,21 +5,67 @@
 //  Created by eleves on 17-09-27.
 //  Copyright © 2017 eleves. All rights reserved.
 //
-
+//======================================================
 import UIKit
-
+//----------------
 class ViewController: UIViewController {
 
+//----------------
+    @IBOutlet weak var viewBack_01: UIView!
+    @IBOutlet weak var viewFront_01: UIView!
+
+    @IBOutlet weak var animalView01: UIImageView!
+    
+    var arrayOfImagesViews: [UIImageView]!
+    var arrayOfAnimalNames: [String] = ["burro.png"]
+    var arrayOfRandomAnimalNames = [String] ()
+    var arrayChosenCards = [String] ()
+    
+//----------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        arrayOfImagesViews = [animalView01]
+        randomAnimalNames()
+        setImagesToCard()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+//----------------
+    @IBAction func showCard(_ sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            flipCard(from: viewFront_01, to: viewBack_01)
+        default:
+            break
+        }
     }
-
-
+//----------------
+    func flipCard(from: UIView, to: UIView){
+        let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        
+        UIView.transition(with: from, duration: 1.0, options: transitionOptions, animations: {from.isHidden = true})
+        
+        UIView.transition(with: to, duration: 1.0, options: transitionOptions, animations: {to.isHidden = false})
+    }
+//----------------
+    func setImagesToCard(){
+        var number = 0
+        for imgView in arrayOfImagesViews{
+            imgView.image = UIImage(named: arrayOfRandomAnimalNames[number])
+            number = number + 1
+        }
+    }
+//----------------
+    func randomAnimalNames(){
+        let numberOfAnimals = arrayOfAnimalNames.count
+        
+        // Repetition entre 0 et 3
+        for _ in 1...numberOfAnimals {
+            let randomNumber = Int(arc4random_uniform(UInt32(arrayOfAnimalNames.count)))
+            arrayOfRandomAnimalNames.append(arrayOfAnimalNames[randomNumber])
+            arrayOfAnimalNames.remove(at: randomNumber)
+        }
+    }
+//----------------
+    
+    
 }
-
+//======================================================
